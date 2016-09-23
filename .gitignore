@@ -1,0 +1,14 @@
+//progress upload
+
+<progress id = "uploadprogress" min="0" max="100" value="0">0</progress>
+
+//progress callback
+
+xhr.upload.onprogress = function (event){
+
+    if (event.lengthComputable){
+        var complete = (event.loaded /event.total*100 | 0);
+        var progress = document.getElementById('uploadprogress');
+        progress.value = progress.innerHtML = complete;
+    }
+}
